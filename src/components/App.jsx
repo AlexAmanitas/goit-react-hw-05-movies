@@ -4,18 +4,20 @@ import AppBar from 'components/AppBar';
 import Home from 'pages/Home';
 
 // import Movies from '../pages/Movies/Movies';
-import Cast from 'components/Cast';
-import Review from 'components/Reviews';
+// import Cast from 'components/Cast';
+// import Review from 'components/Reviews';
 // import FilmDetails from './FilmDetails/FilmDetals';
 
 const FilmDetails = lazy(() => import('./FilmDetails/FilmDetals'));
 const Movies = lazy(() => import('pages/Movies'));
+const Cast = lazy(() => import('components/Cast'));
+const Review = lazy(() => import('components/Reviews'));
 
 export const App = () => {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
-        <Route path="/" element={<AppBar />}>
+        <Route path="/goit-react-hw-05-movies" element={<AppBar />}>
           <Route index element={<Home />}></Route>
           <Route path="movies" element={<Movies />}></Route>
           <Route path="movies/:movieId" element={<FilmDetails />}>

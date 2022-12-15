@@ -21,7 +21,10 @@ const MovieList = ({ movies }) => {
             alt=""
             width="50"
           />
-          <FilmLink to={`/movies/${el.id}`} state={{ from: location }}>
+          <FilmLink
+            to={`/goit-react-hw-05-movies/movies/${el.id}`}
+            state={{ from: location }}
+          >
             {el.title}
           </FilmLink>
         </Element>

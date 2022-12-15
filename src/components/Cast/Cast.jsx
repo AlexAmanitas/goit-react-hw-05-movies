@@ -1,7 +1,7 @@
 import { fetchMoviesCredits } from '../TmdbApi';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { CastList } from './Cast.styled';
+import { CastList, Name, Role } from './Cast.styled';
 // import CastList from './castList';
 
 const Cast = () => {
@@ -34,8 +34,12 @@ const Cast = () => {
             width="200"
             height="300"
           />
-          <p>Name: {el.name}</p>
-          <p>Character: {el.character}</p>
+          <Name>
+            Name: <Role>{el.name}</Role>
+          </Name>
+          <Name>
+            Character: <Role>{el.character}</Role>
+          </Name>
         </li>
       ))}
     </CastList>
