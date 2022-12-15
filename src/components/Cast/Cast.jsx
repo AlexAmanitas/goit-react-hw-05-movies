@@ -28,8 +28,7 @@ const Cast = () => {
             src={
               el.profile_path
                 ? `https://image.tmdb.org/t/p/w500${el.profile_path}`
-                : // : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
-                  ''
+                : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
             }
             alt={el.name}
             width="200"

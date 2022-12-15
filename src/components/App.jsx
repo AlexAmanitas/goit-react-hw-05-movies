@@ -10,7 +10,7 @@ import FilmDetails from './FilmDetails/FilmDetals';
 export const App = () => {
   return (
     <Routes>
-      <Route path="/goit-react-hw-05-movies/" element={<AppBar />}>
+      <Route path="/" element={<AppBar />}>
         <Route index element={<Home />}></Route>
         <Route path="movies" element={<Movies />}></Route>
         <Route path="movies/:movieId" element={<FilmDetails />}>

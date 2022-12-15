@@ -12,6 +12,15 @@ const MovieList = ({ movies }) => {
       {movies.map(el => (
         <li key={el.id}>
           <Link to={`/movies/${el.id}`} state={{ from: location }}>
+            <img
+              src={
+                el.poster_path
+                  ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
+                  : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+              }
+              alt=""
+              width="50"
+            />
             {el.title}
           </Link>
         </li>
