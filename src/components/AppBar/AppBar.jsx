@@ -1,8 +1,9 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
 const AppBar = () => {
+  console.log('AppBar');
   return (
-    <div>
+    <>
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
@@ -10,7 +11,7 @@ const AppBar = () => {
         </nav>
       </header>
       <Outlet />
-    </div>
+    </>
   );
 };
 

@@ -9,18 +9,17 @@ const Movies = () => {
   const [movieList, setMovieList] = useState([{}]);
   const searchQuery = searchParams.get('query');
 
-  const handleChange = query => {
+  console.log('Movies');
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    const query = evt.target[0].value;
     const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
 
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    setSearchParams({ query: evt.target[0].value });
-  };
-
   useEffect(() => {
-    // console.log(searchParams);
+    console.log(searchQuery);
     if (!searchQuery) return;
     const responce = fetchSearchMovie(searchQuery);
     responce.then(res => setMovieList(res));
@@ -28,11 +27,7 @@ const Movies = () => {
 
   return (
     <>
-      <SearchBox
-        value={searchQuery}
-        onSubmit={handleSubmit}
-        onChange={handleChange}
-      />
+      <SearchBox onSubmit={handleSubmit} />
       <MovieList movies={movieList} />
     </>
   );

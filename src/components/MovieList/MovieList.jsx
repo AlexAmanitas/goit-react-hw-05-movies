@@ -5,6 +5,8 @@ const MovieList = ({ movies }) => {
   // console.log(movies);
   if (movies.length === 1) return;
 
+  console.log('MovieList');
+
   return (
     <ul>
       {movies.map(el => (

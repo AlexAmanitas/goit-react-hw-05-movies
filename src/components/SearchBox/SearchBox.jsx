@@ -1,14 +1,11 @@
 import ConfettiButton from 'components/ConfettiButton';
 
-const SearchBox = ({ value, onChange, onSubmit }) => {
+const SearchBox = ({ onSubmit }) => {
+  console.log('searcBox');
   return (
     <form onSubmit={onSubmit}>
       <input
         type="text"
-        value={value}
-        onChange={e => {
-          onChange(e.target.value);
-        }}
         autoComplete="off"
         autoFocus
         placeholder="Search movies..."

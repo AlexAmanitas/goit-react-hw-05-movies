@@ -16,7 +16,7 @@ const Home = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // console.log('home');
+    console.log('home');
     const responce = fetchTrendingMovies();
     responce.then(res => setMovieList(res));
   }, []);

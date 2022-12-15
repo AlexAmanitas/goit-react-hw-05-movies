@@ -51,14 +51,13 @@ export const fetchMoviesDetails = async id => {
 
 export async function fetchMoviesCredits(id) {
   try {
-    const url = `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}`;
+    const url = `${BASE_URL}/movie/${id}/credits?api_key=${API_KEY}&language=en-US`;
     Notiflix.Loading.standard();
     const details = await axios.get(url);
     Notiflix.Loading.remove();
     return details.data;
   } catch (error) {
     console.log(error);
-    Notiflix.failure('Oops, an error occurred');
   } finally {
     Notiflix.Loading.remove();
   }
@@ -73,7 +72,6 @@ export async function fetchMoviesReviews(id) {
     return details.data;
   } catch (error) {
     console.log(error);
-    Notiflix.failure('Oops, an error occurred');
   } finally {
     Notiflix.Loading.remove();
   }
