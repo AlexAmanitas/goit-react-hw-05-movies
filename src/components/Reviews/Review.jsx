@@ -1,5 +1,5 @@
-import { ReviewList } from 'components/Cast/castList';
-import { fetchMoviesReviews } from 'components/TmdbApi';
+import { ReviewList } from '../Cast/castList';
+import { fetchMoviesReviews } from '../TmdbApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 

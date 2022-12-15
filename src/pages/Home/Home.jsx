@@ -1,6 +1,6 @@
-import { fetchTrendingMovies } from 'components/TmdbApi';
+import { fetchTrendingMovies } from '../../components/TmdbApi';
 import { useState, useEffect } from 'react';
-import MovieList from 'components/MovieList';
+import MovieList from '../../components/MovieList/MovieList';
 import { useLocation } from 'react-router-dom';
 
 const Home = () => {

@@ -1,10 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import AppBar from 'components/AppBar';
-import Home from 'pages/Home';
-import FilmDetails from 'components/FilmDetails';
-import Movies from 'pages/Movies';
-import Cast from 'components/Cast';
+import AppBar from './AppBar/AppBar';
+import Home from '../pages/Home/Home';
+
+import Movies from '../pages/Movies/Movies';
+import Cast from './Cast/Cast';
 import Review from './Reviews/Review';
+import FilmDetails from './FilmDetails/FilmDetals';
 
 export const App = () => {
   return (

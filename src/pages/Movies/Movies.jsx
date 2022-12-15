@@ -1,6 +1,6 @@
-import MovieList from 'components/MovieList';
-import SearchBox from 'components/SearchBox';
-import { fetchSearchMovie } from 'components/TmdbApi';
+import MovieList from '../../components/MovieList/MovieList';
+import SearchBox from '../../components/SearchBox/SearchBox';
+import { fetchSearchMovie } from '../../components/TmdbApi';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
