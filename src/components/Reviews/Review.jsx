@@ -1,7 +1,8 @@
-import { ReviewList } from '../Cast/castList';
+// import { ReviewList } from '../Cast/castList';
 import { fetchMoviesReviews } from '../TmdbApi';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Article, Author } from './Review.styled';
 
 const Review = () => {
   const { movieId } = useParams();
@@ -17,11 +18,16 @@ const Review = () => {
   console.log(results);
   if (results.length === 0)
     return <p>We don't have any reviews for this movie</p>;
-  // return <p>jscgaskbaskvuas review</p>;
 
   return (
     <ul>
-      <ReviewList review={results} />
+      {/* <ReviewList review={results} /> */}
+      {results.map(el => (
+        <Article key={el.id}>
+          <Author>Author: {el.author}</Author>
+          <p>{el.content}</p>
+        </Article>
+      ))}
     </ul>
   );
 };

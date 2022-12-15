@@ -1,4 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Element, FilmImage, FilmLink, List } from './MovieList.styled';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
@@ -8,24 +9,24 @@ const MovieList = ({ movies }) => {
   console.log('MovieList');
 
   return (
-    <ul>
+    <List>
       {movies.map(el => (
-        <li key={el.id}>
-          <Link to={`/movies/${el.id}`} state={{ from: location }}>
-            <img
-              src={
-                el.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
-                  : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
-              }
-              alt=""
-              width="50"
-            />
+        <Element key={el.id}>
+          <FilmImage
+            src={
+              el.poster_path
+                ? `https://image.tmdb.org/t/p/w500${el.poster_path}`
+                : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+            }
+            alt=""
+            width="50"
+          />
+          <FilmLink to={`/movies/${el.id}`} state={{ from: location }}>
             {el.title}
-          </Link>
-        </li>
+          </FilmLink>
+        </Element>
       ))}
-    </ul>
+    </List>
   );
 };
 

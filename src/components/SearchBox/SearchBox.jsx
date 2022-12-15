@@ -1,18 +1,20 @@
 // import ConfettiButton from '../ConfettiButton/ConfettiButton';
 
+import { Input, SearchBtn, SearchForm } from './SearchBox.styled';
+
 const SearchBox = ({ onSubmit }) => {
   console.log('searcBox');
   return (
-    <form onSubmit={onSubmit}>
-      <input
+    <SearchForm onSubmit={onSubmit}>
+      <Input
         type="text"
         autoComplete="off"
         autoFocus
         placeholder="Search movies..."
-      ></input>
-      <button type="submit">Search</button>
+      ></Input>
+      <SearchBtn type="submit">Search</SearchBtn>
       {/* <ConfettiButton type="submit" text="Search" icon="false"></ConfettiButton> */}
-    </form>
+    </SearchForm>
   );
 };
 export default SearchBox;

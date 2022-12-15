@@ -1,7 +1,19 @@
 import { fetchMoviesDetails } from '../TmdbApi';
 import { useState, useEffect } from 'react';
-import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
+import { useParams, useLocation, Outlet } from 'react-router-dom';
 // import Cast from 'components/Cast';
+import { ImArrowLeft2 } from 'react-icons/im';
+
+import {
+  GoBackBtn,
+  FilmWrap,
+  DescriptionWrap,
+  Title,
+  PostTitle,
+  Text,
+  Container,
+  JumpLink,
+} from './FilmDetails.styled';
 
 const FilmDetails = () => {
   const [movieDetails, setMovieDetails] = useState();
@@ -24,23 +36,33 @@ const FilmDetails = () => {
   const ferGenres = genres.map(el => el.name).join(', ');
 
   return (
-    <>
-      <Link to={backLinkHref}>Go Back</Link>
-      <img
-        src={`https://image.tmdb.org/t/p/w500${poster_path}`}
-        alt=""
-        width="350"
-      />
-      <h2>{` ${title} (${release_date.slice(0, 4)})`}</h2>
-      <h3>Overview</h3>
-      <p>{overview}</p>
-      <h3>Genres</h3>
-      <p>{ferGenres}</p>
-      <h3>Additional information</h3>
-      <Link to="cast">Cast</Link>
-      <Link to="review">Review</Link>
+    <Container>
+      <GoBackBtn to={backLinkHref}>
+        <ImArrowLeft2 /> Back
+      </GoBackBtn>
+      <FilmWrap>
+        <img
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500${poster_path}`
+              : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+          }
+          alt=""
+          width="350"
+        />
+        <DescriptionWrap>
+          <Title>{` ${title} (${release_date.slice(0, 4)})`}</Title>
+          <PostTitle>Overview</PostTitle>
+          <Text>{overview}</Text>
+          <PostTitle>Genres</PostTitle>
+          <Text>{ferGenres}</Text>
+        </DescriptionWrap>
+      </FilmWrap>
+      <PostTitle>Additional information</PostTitle>
+      <JumpLink to="cast">Cast</JumpLink>
+      <JumpLink to="review">Review</JumpLink>
       <Outlet />
-    </>
+    </Container>
   );
 };
 

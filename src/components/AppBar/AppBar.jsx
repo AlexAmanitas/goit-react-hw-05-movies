@@ -1,15 +1,16 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { Header, Nav, StyledLink } from './AppBar.styled';
 
 const AppBar = () => {
   console.log('AppBar');
   return (
     <>
-      <header>
-        <nav>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </nav>
-      </header>
+      <Header>
+        <Nav>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/movies">Movies</StyledLink>
+        </Nav>
+      </Header>
       <Outlet />
     </>
   );
