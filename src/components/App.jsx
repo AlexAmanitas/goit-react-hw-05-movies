@@ -30,6 +30,8 @@ export const App = () => {
   );
 };
 
+//что такое user score?
+
 //  - / Home { Trending Film list }    !!!  Go Back Button  !!!
 //   - / FilmDetails /movies/id {Img, Name, Year, UserScore, Overview, Genres}
 //    - / Cast {Img, Name, Character}

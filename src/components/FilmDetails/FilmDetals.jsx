@@ -34,7 +34,7 @@ const FilmDetails = () => {
 
   const { poster_path, title, release_date, overview, genres } = movieDetails;
   console.log('id', movieDetails, movieId);
-  const ferGenres = genres.map(el => el.name).join(', ');
+  const processedGenres = genres.map(el => el.name).join(' ');
 
   return (
     <Container>
@@ -56,7 +56,7 @@ const FilmDetails = () => {
           <PostTitle>Overview</PostTitle>
           <Text>{overview}</Text>
           <PostTitle>Genres</PostTitle>
-          <Text>{ferGenres}</Text>
+          <Text>{processedGenres}</Text>
         </DescriptionWrap>
       </FilmWrap>
       <PostTitle>Additional information</PostTitle>
