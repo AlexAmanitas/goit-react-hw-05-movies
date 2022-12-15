@@ -1,4 +1,4 @@
-import { fetchMoviesDetails } from 'components/TmdbApi';
+import { fetchMoviesDetails } from '../TmdbApi';
 import { useState, useEffect } from 'react';
 import { Link, useParams, useLocation, Outlet } from 'react-router-dom';
 // import Cast from 'components/Cast';

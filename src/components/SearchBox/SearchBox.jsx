@@ -1,4 +1,4 @@
-import ConfettiButton from 'components/ConfettiButton';
+import ConfettiButton from '../ConfettiButton/ConfettiButton';
 
 const SearchBox = ({ onSubmit }) => {
   console.log('searcBox');
