@@ -1,4 +1,4 @@
-import ConfettiButton from '../ConfettiButton/ConfettiButton';
+// import ConfettiButton from '../ConfettiButton/ConfettiButton';
 
 const SearchBox = ({ onSubmit }) => {
   console.log('searcBox');
@@ -10,7 +10,8 @@ const SearchBox = ({ onSubmit }) => {
         autoFocus
         placeholder="Search movies..."
       ></input>
-      <ConfettiButton type="submit" text="Search" icon="false"></ConfettiButton>
+      <button type="submit">Search</button>
+      {/* <ConfettiButton type="submit" text="Search" icon="false"></ConfettiButton> */}
     </form>
   );
 };
