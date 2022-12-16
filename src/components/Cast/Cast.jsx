@@ -1,5 +1,5 @@
 import { fetchMoviesCredits } from '../TmdbApi';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { CastList, Name, Role } from './Cast.styled';
 // import CastList from './castList';
@@ -7,11 +7,6 @@ import { CastList, Name, Role } from './Cast.styled';
 const Cast = () => {
   const { movieId } = useParams();
   const [{ cast }, setCastInfo] = useState([]);
-  const location = useLocation();
-  const backLinkHref =
-    location.state?.from ?? '/goit-react-hw-05-movies/movies';
-
-  console.log('Cast');
 
   useEffect(() => {
     console.log('movieID Cast', movieId);
