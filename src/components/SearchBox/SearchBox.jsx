@@ -5,17 +5,16 @@ import { Input, SearchBtn, SearchForm } from './SearchBox.styled';
 const SearchBox = ({ onSubmit }) => {
   const onClick = useCallback(() => {
     confetti({
-      particleCount: 500,
-      angle: 60,
-      spread: 50,
-      startVelocity: 75,
+      particleCount: 300,
+      angle: 180,
+      spread: 100,
+      startVelocity: 60,
       origin: {
-        x: 0,
-        y: 1,
+        x: 0.35,
+        y: 0.08,
       },
-      drift: 5,
+      drift: 3,
       ticks: 400,
-      // scalar: 0.8,
     });
   }, []);
 
