@@ -3,7 +3,6 @@ import { Element, FilmImage, FilmLink, List } from './MovieList.styled';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
-  // console.log(movies);
   if (movies.length === 1) return;
 
   console.log('MovieList');
