@@ -8,12 +8,12 @@ const SearchBox = ({ onSubmit }) => {
       particleCount: 300,
       angle: 180,
       spread: 100,
-      startVelocity: 60,
+      startVelocity: 50,
       origin: {
         x: 0.35,
         y: 0.08,
       },
-      drift: 3,
+      drift: 2,
       ticks: 400,
     });
   }, []);
