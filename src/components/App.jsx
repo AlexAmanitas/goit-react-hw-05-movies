@@ -15,25 +15,27 @@ const Review = lazy(() => import('components/Reviews'));
 
 export const App = () => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <AppBar />
-      <Routes>
-        {/* <Route path="/goit-react-hw-05-movies" element={<AppBar />} /> */}
-        <Route path="/goit-react-hw-05-movies" element={<Home />}></Route>
-        <Route
-          path="/goit-react-hw-05-movies/movies"
-          element={<Movies />}
-        ></Route>
-        <Route
-          path="/goit-react-hw-05-movies/movies/:movieId"
-          element={<FilmDetails />}
-        >
-          <Route path="cast" element={<Cast />} />
-          <Route path="review" element={<Review />} />
-        </Route>
-        {/* </Route> */}
-      </Routes>
-    </Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {/* <Route path="/goit-react-hw-05-movies" element={<AppBar />} /> */}
+          <Route path="/goit-react-hw-05-movies" element={<Home />}></Route>
+          <Route
+            path="/goit-react-hw-05-movies/movies"
+            element={<Movies />}
+          ></Route>
+          <Route
+            path="/goit-react-hw-05-movies/movies/:movieId"
+            element={<FilmDetails />}
+          >
+            <Route path="cast" element={<Cast />} />
+            <Route path="review" element={<Review />} />
+          </Route>
+          {/* </Route> */}
+        </Routes>
+      </Suspense>
+    </>
   );
 };
 

@@ -60,8 +60,12 @@ const FilmDetails = () => {
         </DescriptionWrap>
       </FilmWrap>
       <PostTitle>Additional information</PostTitle>
-      <JumpLink to="cast">Cast</JumpLink>
-      <JumpLink to="review">Review</JumpLink>
+      <JumpLink to="cast" state={{ from: backLinkHref }}>
+        Cast
+      </JumpLink>
+      <JumpLink to="review" state={{ from: backLinkHref }}>
+        Review
+      </JumpLink>
       <Outlet />
     </Container>
   );
