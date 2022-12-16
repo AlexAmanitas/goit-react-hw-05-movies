@@ -19,7 +19,7 @@ const MovieList = ({ movies }) => {
                 : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
             }
             alt=""
-            width="50"
+            width="40"
           />
           <FilmLink
             to={`/goit-react-hw-05-movies/movies/${el.id}`}

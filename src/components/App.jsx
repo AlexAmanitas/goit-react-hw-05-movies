@@ -37,7 +37,9 @@ export const App = () => {
   );
 };
 
-//что такое user score?
+//что такое user score
+//прописал все пути через /goit-react-hw-05-movies/
+// иначе на гитхаб пейджес не работает
 
 //  - / Home { Trending Film list }    !!!  Go Back Button  !!!
 //   - / FilmDetails /movies/id {Img, Name, Year, UserScore, Overview, Genres}
