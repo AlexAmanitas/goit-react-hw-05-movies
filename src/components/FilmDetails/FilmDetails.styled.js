@@ -16,6 +16,8 @@ export const GoBackBtn = styled(Link)`
 
 export const FilmWrap = styled.div`
   display: flex;
+  border-bottom: 1px solid #222;
+  padding-bottom: 15px;
 `;
 
 export const DescriptionWrap = styled.div`
@@ -34,6 +36,11 @@ export const PostTitle = styled.h3`
 
 export const Text = styled.p`
   margin-bottom: 36px;
+`;
+
+export const InfoWrap = styled.div`
+  padding-bottom: 15px;
+  border-bottom: 1px solid #222;
 `;
 
 export const JumpLink = styled(Link)`

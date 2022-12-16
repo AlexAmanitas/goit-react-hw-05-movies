@@ -7,14 +7,14 @@ const SearchBox = ({ onSubmit }) => {
     confetti({
       particleCount: 300,
       angle: 180,
-      spread: 100,
-      startVelocity: 50,
+      spread: 120,
+      startVelocity: 45,
       origin: {
         x: 0.35,
         y: 0.08,
       },
       drift: 2,
-      ticks: 400,
+      ticks: 300,
     });
   }, []);
 
@@ -29,7 +29,6 @@ const SearchBox = ({ onSubmit }) => {
       <SearchBtn type="submit" onClick={onClick}>
         Search
       </SearchBtn>
-      {/* <SearchBtn type="submit" text="Search" icon="false"></SearchBtn> */}
     </SearchForm>
   );
 };

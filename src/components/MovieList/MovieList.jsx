@@ -5,8 +5,6 @@ const MovieList = ({ movies }) => {
   const location = useLocation();
   if (movies.length === 1) return;
 
-  console.log('MovieList');
-
   return (
     <List>
       {movies.map(el => (

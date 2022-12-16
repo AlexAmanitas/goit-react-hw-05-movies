@@ -1,7 +1,6 @@
-import { fetchMoviesDetails } from '../TmdbApi';
+import { fetchMoviesDetails } from 'components/TmdbApiService';
 import { useState, useEffect } from 'react';
 import { useParams, useLocation, Outlet } from 'react-router-dom';
-// import Cast from 'components/Cast';
 import { ImArrowLeft2 } from 'react-icons/im';
 
 import {
@@ -11,6 +10,7 @@ import {
   Title,
   PostTitle,
   Text,
+  InfoWrap,
   Container,
   JumpLink,
 } from './FilmDetails.styled';
@@ -22,18 +22,15 @@ const FilmDetails = () => {
   const backLinkHref =
     location.state?.from ?? '/goit-react-hw-05-movies/movies';
 
-  console.log('FilmsDetails');
-
   useEffect(() => {
-    // console.log('object');
     const responce = fetchMoviesDetails(movieId);
     responce.then(res => setMovieDetails(res));
   }, [movieId]);
 
   if (!movieDetails) return;
 
-  const { poster_path, title, release_date, overview, genres } = movieDetails;
-  console.log('id', movieDetails, movieId);
+  const { poster_path, title, release_date, overview, genres, vote_average } =
+    movieDetails;
   const processedGenres = genres.map(el => el.name).join(' ');
 
   return (
@@ -53,19 +50,22 @@ const FilmDetails = () => {
         />
         <DescriptionWrap>
           <Title>{` ${title} (${release_date.slice(0, 4)})`}</Title>
+          <Text>{`User Score: ${Math.round(+vote_average * 10)} %`}</Text>
           <PostTitle>Overview</PostTitle>
           <Text>{overview}</Text>
           <PostTitle>Genres</PostTitle>
           <Text>{processedGenres}</Text>
         </DescriptionWrap>
       </FilmWrap>
-      <PostTitle>Additional information</PostTitle>
-      <JumpLink to="cast" state={{ from: backLinkHref }}>
-        Cast
-      </JumpLink>
-      <JumpLink to="review" state={{ from: backLinkHref }}>
-        Review
-      </JumpLink>
+      <InfoWrap>
+        <PostTitle>Additional information</PostTitle>
+        <JumpLink to="cast" state={{ from: backLinkHref }}>
+          Cast
+        </JumpLink>
+        <JumpLink to="review" state={{ from: backLinkHref }}>
+          Review
+        </JumpLink>
+      </InfoWrap>
       <Outlet />
     </Container>
   );

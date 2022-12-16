@@ -1,25 +1,20 @@
-import { fetchMoviesCredits } from '../TmdbApi';
+import { fetchMoviesCredits } from '../TmdbApiService';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { CastList, Name, Role } from './Cast.styled';
-// import CastList from './castList';
 
 const Cast = () => {
   const { movieId } = useParams();
   const [{ cast }, setCastInfo] = useState([]);
 
   useEffect(() => {
-    console.log('movieID Cast', movieId);
     fetchMoviesCredits(movieId).then(res => setCastInfo(res));
   }, [movieId]);
 
   if (!cast) return;
 
-  console.log(cast);
-
   return (
     <CastList>
-      {/* <CastList cast={cast} /> */}
       {cast.map(el => (
         <li key={el.id}>
           <img

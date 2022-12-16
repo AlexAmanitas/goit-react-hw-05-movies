@@ -22,15 +22,11 @@ export async function fetchSearchMovie(searchQuery) {
   if (searchQuery === '') return;
   try {
     const url = `${BASE_URL}/search/movie?api_key=${API_KEY}&query=${searchQuery}`;
-    // Notiflix.Loading.standard();
     const searchingData = await axios.get(url);
-    // Notiflix.Loading.remove();
     return searchingData.data.results;
   } catch (error) {
     console.log(error);
     Notiflix.failure('Oops, an error occurred');
-  } finally {
-    Notiflix.Loading.remove();
   }
 }
 
@@ -43,7 +39,6 @@ export const fetchMoviesDetails = async id => {
     return details.data;
   } catch (error) {
     console.log(error);
-    // Notiflix.failure('Oops, an error occurred');
   } finally {
     Notiflix.Loading.remove();
   }

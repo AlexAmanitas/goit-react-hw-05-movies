@@ -2,7 +2,6 @@ import { Outlet } from 'react-router-dom';
 import { Header, Nav, StyledLink } from './AppBar.styled';
 
 const AppBar = () => {
-  console.log('AppBar');
   return (
     <>
       <Header>
