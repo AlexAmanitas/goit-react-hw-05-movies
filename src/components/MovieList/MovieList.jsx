@@ -3,6 +3,9 @@ import { Element, FilmImage, FilmLink, List } from './MovieList.styled';
 
 const MovieList = ({ movies }) => {
   const location = useLocation();
+  if (!movies) {
+    return <h3>Internal Server Error</h3>;
+  }
   if (movies.length === 1) return;
 
   return (
