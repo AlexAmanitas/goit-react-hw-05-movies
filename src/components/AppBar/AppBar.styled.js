@@ -4,17 +4,18 @@ import styled from 'styled-components';
 export const Header = styled.header`
   height: 50px;
   border-bottom: 1px solid #555;
+  box-shadow: 0px 15px 10px -15px #111;
   display: flex;
   align-items: center;
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: #555;
-  font-size: 17px;
+  font-size: 21px;
   margin-left: 20px;
+  font-weight: 500;
 
   &.active {
-    color: orange;
+    color: #ff6c00;
   }
 `;
 

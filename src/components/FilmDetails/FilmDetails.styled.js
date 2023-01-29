@@ -8,10 +8,15 @@ export const Container = styled.div`
 `;
 
 export const GoBackBtn = styled(Link)`
+  padding: 8px;
   width: 50px;
   display: flex;
   align-items: center;
-  color: #333;
+  transition: color 300ms linear;
+
+  &:hover {
+    color: #ff6c00;
+  }
 `;
 
 export const FilmWrap = styled.div`
@@ -31,7 +36,6 @@ export const Title = styled.h2`
 
 export const PostTitle = styled.h3`
   margin-bottom: 20px;
-  margin-top: 36px;
 `;
 
 export const Text = styled.p`
@@ -39,21 +43,20 @@ export const Text = styled.p`
 `;
 
 export const InfoWrap = styled.div`
-  padding-bottom: 15px;
+  padding: 36px 0 15px;
   border-bottom: 1px solid #222;
 `;
 
 export const JumpLink = styled(Link)`
+  font-weight: 500;
   margin-bottom: 15px;
-  color: #222;
-  padding: 0 7px;
+  padding: 5px 10px;
   margin-left: 15px;
   border-radius: 5px;
-  border: 1px solid #555;
-  transition: border-color 300ms linear, color 300ms linear;
+  border: 2px solid #000;
+  transition: border-color 300ms linear;
 
   &:hover {
-    border-color: orange;
-    color: blue;
+    border-color: #ff6c00;
   }
 `;
