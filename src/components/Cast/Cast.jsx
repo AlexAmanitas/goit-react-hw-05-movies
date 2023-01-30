@@ -1,7 +1,7 @@
 import { fetchMoviesCredits } from '../TmdbApiService';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { Name, Role } from './Cast.styled';
+import { CastList, Name, Role } from './Cast.styled';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -14,13 +14,18 @@ const Cast = () => {
   if (!cast) return;
 
   return (
-    <ul>
+    <CastList>
       {cast.map(el => (
         <li key={el.id}>
           <img
-            src={`https://image.tmdb.org/t/p/w500${el.profile_path}`}
+            src={
+              el.profile_path
+                ? `https://image.tmdb.org/t/p/w500${el.profile_path}`
+                : 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+            }
             alt={el.name}
-            width="150"
+            width="200"
+            height="300"
           />
           <Name>
             Name: <Role>{el.name}</Role>
@@ -30,7 +35,7 @@ const Cast = () => {
           </Name>
         </li>
       ))}
-    </ul>
+    </CastList>
   );
 };
 
