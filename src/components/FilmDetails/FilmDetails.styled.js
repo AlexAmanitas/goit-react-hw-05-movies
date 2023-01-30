@@ -9,14 +9,22 @@ export const Container = styled.div`
 
 export const GoBackBtn = styled(Link)`
   width: 50px;
+  padding: 7px;
   display: flex;
   align-items: center;
   color: #333;
+  border-radius: 7px;
+  transition: background-color 300ms linear, color 300ms linear;
+
+  &:hover {
+    background-color: #ff6c00;
+    color: #fff;
+  }
 `;
 
 export const FilmWrap = styled.div`
   display: flex;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #ff6c00;
   padding-bottom: 15px;
 `;
 
@@ -40,20 +48,20 @@ export const Text = styled.p`
 
 export const InfoWrap = styled.div`
   padding-bottom: 15px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #ff6c00;
 `;
 
 export const JumpLink = styled(Link)`
   margin-bottom: 15px;
-  color: #222;
-  padding: 0 7px;
+  color: #ff6c00;
+  background-color: #fff;
+  padding: 2px 9px;
   margin-left: 15px;
   border-radius: 5px;
-  border: 1px solid #555;
-  transition: border-color 300ms linear, color 300ms linear;
+  transition: background-color 300ms linear, color 300ms linear;
 
   &:hover {
-    border-color: orange;
-    color: blue;
+    background-color: #ff6c00;
+    color: #fff;
   }
 `;

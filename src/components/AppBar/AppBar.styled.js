@@ -3,18 +3,24 @@ import styled from 'styled-components';
 
 export const Header = styled.header`
   height: 50px;
-  border-bottom: 1px solid #555;
+  border-bottom: 2px solid #ff6c00;
   display: flex;
   align-items: center;
 `;
 
 export const StyledLink = styled(NavLink)`
-  color: #555;
+  color: #000;
   font-size: 17px;
   margin-left: 20px;
+  font-weight: 600;
+  transition: color 300ms linear;
+
+  &:hover {
+    color: #ff6c00;
+  }
 
   &.active {
-    color: orange;
+    color: #ff6c00;
   }
 `;
 

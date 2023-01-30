@@ -7,10 +7,10 @@ export const SearchForm = styled.form`
 
 export const Input = styled.input`
   font-size: 17px;
-  padding: 5px 0 5px 15px;
+  padding: 10px 0 10px 15px;
   width: 250px;
   border-radius: 6px 0 0 6px;
-  background-color: #ddd;
+  background-color: #ff6c0055;
   width: 250px;
   border: none;
   outline: none;
@@ -18,9 +18,10 @@ export const Input = styled.input`
 `;
 
 export const SearchBtn = styled.button`
-  font-size: 17px;
-  padding: 5px;
-  background-color: #ddd;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px;
+  background-color: #ff6c0055;
   color: #222;
   border: none;
   border-radius: 0 6px 6px 0;
@@ -28,6 +29,7 @@ export const SearchBtn = styled.button`
   transition: background-color 300ms linear, color 300ms linear;
 
   &:hover {
-    background-color: orange;
+    background-color: #ff6c00;
+    color: #fff;
   }
 `;
